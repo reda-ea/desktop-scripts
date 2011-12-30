@@ -7,6 +7,6 @@ fi
 
 
 TEMP=`mktemp -d`
-encfs  --idle=1 --extpass="zenity --password --title=encfs" "$1" "$TEMP" && caja "$TEMP" || zenity --error --text="Password incorrect"
+encfs  --idle=1 --extpass="zenity --password --title=encfs" "$1" "$TEMP" && xdg-open "$TEMP" || zenity --error --text="Password incorrect"
 
-cd $TEMP; mate-terminal
+# cd $TEMP; x-terminal-emulator
